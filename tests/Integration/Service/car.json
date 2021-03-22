@@ -1,0 +1,52 @@
+[
+  {
+    "make": "Mazda",
+    "model": "Tribute",
+    "desc": "nunc viverra dapibus nulla suscipit"
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "500SL",
+    "desc": "consequat dui nec nisi volutpat"
+  },
+  {
+    "make": "Audi",
+    "model": "A8",
+    "desc": "dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum"
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "SL-Class",
+    "desc": "id sapien in sapien iaculis congue vivamus"
+  },
+  {
+    "make": "Mazda",
+    "model": "CX-7",
+    "desc": "rhoncus dui vel sem sed sagittis"
+  },
+  {
+    "make": "Audi",
+    "model": "TT",
+    "desc": "id luctus nec molestie sed justo"
+  },
+  {
+    "make": "BMW",
+    "model": "6 Series",
+    "desc": "id luctus nec molestie sed justo pellentesque viverra pede ac"
+  },
+  {
+    "make": "Mazda",
+    "model": "Mazda3",
+    "desc": "amet turpis elementum ligula vehicula consequat morbi a"
+  },
+  {
+    "make": "Volvo",
+    "model": "XC90",
+    "desc": "rutrum nulla tellus in sagittis dui vel nisl"
+  },
+  {
+    "make": "Audi",
+    "model": "S4",
+    "desc": "volutpat dui maecenas tristique est"
+  }
+]
