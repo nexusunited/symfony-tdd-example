@@ -7,6 +7,7 @@ use App\Entity\CarMake;
 use App\Repository\CarMakeRepository;
 use App\Repository\CarRepository;
 use App\Service\Mapping\Car;
+use App\Service\Validator\Validator;
 use Doctrine\ORM\EntityManagerInterface;
 
 class CarImport
@@ -30,18 +31,24 @@ class CarImport
      * @var \App\Repository\CarMakeRepository
      */
     private CarMakeRepository $carMakeRepository;
+    /**
+     * @var \App\Service\Validator\Validator
+     */
+    private Validator $validator;
 
     public function __construct(
         Car $carMapping,
         EntityManagerInterface $entityManager,
         CarRepository $carRepository,
-        CarMakeRepository $carMakeRepository
+        CarMakeRepository $carMakeRepository,
+        Validator $validator
     )
     {
         $this->carMapping = $carMapping;
         $this->entityManager = $entityManager;
         $this->carRepository = $carRepository;
         $this->carMakeRepository = $carMakeRepository;
+        $this->validator = $validator;
     }
 
     public function import(string $pathToJson)
@@ -83,7 +90,9 @@ class CarImport
         $carInfoList = json_decode(file_get_contents($pathToJson), true, 512, JSON_THROW_ON_ERROR);
 
         foreach ($carInfoList as $carInfo) {
-            $carDtoList[] = $this->carMapping->mapJsonToCarImportDto($carInfo);
+            if($this->validator->isValid($carInfo)) {
+                $carDtoList[] = $this->carMapping->mapJsonToCarImportDto($carInfo);
+            }
         }
         
         return $carDtoList;
