@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail{% endblock %}
+
+{% block body %}
+
+    <h1>{{ car.model }}</h1>
+    <h2>{{ car.make.name }}</h2>
+    <h3>{{ car.description }}</h3>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Start{% endblock %}
+
+{% block body %}
+
+    <h1>Car</h1>
+
+    <ul class="car">
+        {% for make in makeList %}
+            <li><a href="{{ url('make', {'makeId' : make.id}) }}">{{ make.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
