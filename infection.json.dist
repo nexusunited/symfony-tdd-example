@@ -1,0 +1,20 @@
+{
+    "source": {
+        "directories": [
+            "src"
+        ],
+        "excludes": [
+            "Kernel.php"
+        ]
+    },
+    "logs": {
+        "text": "infection/infection.log",
+        "summary": "infection/summary.log",
+        "perMutator": "infection/per-mutator.md"
+    },
+    "mutators": {
+        "@default": true
+    },
+    "initialTestsPhpOptions": "-d xdebug.mode=coverage",
+    "testFrameworkOptions": "--verbose"
+}

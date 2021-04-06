@@ -12,6 +12,8 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class CarImport
 {
+    private const JSON_DEPTH = 512;
+
     /**
      * @var \App\Service\Mapping\Car
      */
@@ -87,7 +89,7 @@ class CarImport
     private function convertJsonToCarDtoList(string $pathToJson): array
     {
         $carDtoList = [];
-        $carInfoList = json_decode(file_get_contents($pathToJson), true, 512, JSON_THROW_ON_ERROR);
+        $carInfoList = json_decode(file_get_contents($pathToJson), true, self::JSON_DEPTH, JSON_THROW_ON_ERROR);
 
         foreach ($carInfoList as $carInfo) {
             if($this->validator->isValid($carInfo)) {
