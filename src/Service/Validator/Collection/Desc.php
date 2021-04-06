@@ -6,6 +6,6 @@ class Desc implements CheckInterface
 {
     public function isValid(array $data): bool
     {
-        return isset($data['model']) && is_string($data['model']);
+        return isset($data['desc']) && is_string($data['desc']);
     }
 }
